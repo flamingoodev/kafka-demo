@@ -23,7 +23,7 @@ spring:
       buffer-memory: 33554432
       # 事务管理前缀
       #      transaction-id-prefix: tx.
-      # Kafka提供的序列化和反序列化类
+      # Kafka提供的序列化类
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       properties:
@@ -33,13 +33,13 @@ spring:
     consumer:
       # 默认的消费组ID
       group-id: eoneplus.cn
-
-      auto-offset-reset: earliest
+      # 消费新消息 earliest从头开始消费 latest消费该分区下新产生的数据
+      auto-offset-reset: latest
       # 是否自动提交offset
-      enable-auto-commit: true
+      enable-auto-commit: false
       # 提交offset延时(接收到消息后多久提交offset)
       auto-commit-interval: 100
-      # Kafka提供的序列化和反序列化类
+      # Kafka提供的反序列化类
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties:
@@ -48,10 +48,14 @@ spring:
       # 批量消费每次最多消费多少条消息
       # max-poll-records: 50
     listener:
+      # Listener AckMode
+      ack-mode: manual_immediate
+      # 并发消费者
+      concurrency: 1
       # 消费端监听的topic不存在时，项目启动会报错(关掉)
       missing-topics-fatal: false
       # 设置批量消费
       # type: batch
     template:
       # 默认topic
-      default-topic: kafka-demo-topic
+      default-topic: DEFAULT_TOPIC

@@ -1,4 +1,4 @@
-package cn.eoneplus.kafkademo;
+package cn.eoneplus.kafkademo.common;
 
 /**
  * 维护Kafka所有的的消息主题
@@ -11,7 +11,7 @@ public class KafkaTopics {
     /**
      * 默认主题
      */
-    public static final String DEFAULT = "DEFAULT";
+    public static final String DEFAULT = "DEFAULT_TOPIC";
 
     /**
      * 测试主题

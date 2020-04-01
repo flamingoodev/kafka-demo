@@ -1,5 +1,6 @@
 package cn.eoneplus.kafkademo;
 
+import cn.eoneplus.kafkademo.producer.KafkaService;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -14,14 +15,14 @@ class KafkaDemoApplicationTests {
     void contextLoads() {
     }
 
-    @Test
-    void sendDefaultTopic() {
-        kafkaService.sendDefaultTopic("This is default topic!");
-    }
-
-    @Test
-    void send() {
-        kafkaService.send(KafkaTopics.TEST, "This is test topic!");
-    }
+//    @Test
+//    void sendDefaultTopic() {
+//        kafkaService.sendDefaultTopic("This is default topic!");
+//    }
+//
+//    @Test
+//    void send() {
+//        kafkaService.send(KafkaTopics.TEST, "This is test topic!");
+//    }
 
 }
