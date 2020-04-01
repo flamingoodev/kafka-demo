@@ -1,6 +1,7 @@
 package cn.eoneplus.kafkademo.controller;
 
 
+import cn.eoneplus.kafkademo.common.KafkaTopics;
 import cn.eoneplus.kafkademo.common.Message;
 import cn.eoneplus.kafkademo.common.Result;
 import cn.eoneplus.kafkademo.producer.KafkaService;
@@ -23,6 +24,7 @@ public class ProduceController {
 
     @RequestMapping(value = "/send", method = RequestMethod.POST, produces = {"application/json"})
     public Result send(@RequestBody Message message) {
+        kafkaService.send(KafkaTopics.TEST, message);
         kafkaService.send(message);
         return Result.ok().put("kafka", "消息发送成功");
     }
