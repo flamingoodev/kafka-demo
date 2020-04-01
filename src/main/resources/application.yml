@@ -47,6 +47,11 @@ spring:
         session.timeout.ms: 15000
       # 批量消费每次最多消费多少条消息
       # max-poll-records: 50
+        # 添加信任的包名
+        spring:
+          json:
+            trusted:
+              packages: cn.eoneplus.kafkademo.common
     listener:
       # Listener AckMode
       ack-mode: manual_immediate

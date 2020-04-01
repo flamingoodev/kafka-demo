@@ -9,15 +9,15 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
 /**
- * 简单消费者
+ * 消费者
  *
  * @author <a href="mailto:flamingodev@outlook.com">FLAMINGO</a>
  * @since 2020/3/31 20:31
  */
 @Component
-public class SimpleConsumer {
+public class Consumer {
 
-    private static final Logger logger = LoggerFactory.getLogger(SimpleConsumer.class);
+    private static final Logger logger = LoggerFactory.getLogger(Consumer.class);
 
     @KafkaListener(topics = KafkaTopics.DEFAULT)
     public void listenDefault(Message message) {
