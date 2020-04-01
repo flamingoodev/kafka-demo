@@ -14,15 +14,4 @@ class KafkaDemoApplicationTests {
     @Test
     void contextLoads() {
     }
-
-//    @Test
-//    void sendDefaultTopic() {
-//        kafkaService.sendDefaultTopic("This is default topic!");
-//    }
-//
-//    @Test
-//    void send() {
-//        kafkaService.send(KafkaTopics.TEST, "This is test topic!");
-//    }
-
 }
