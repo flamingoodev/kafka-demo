@@ -22,7 +22,7 @@ import java.text.SimpleDateFormat;
  */
 public class JsonUtils {
     private static final Logger logger = LoggerFactory.getLogger(JsonUtils.class);
-    private static ObjectMapper objectMapper = new ObjectMapper();
+    private static final ObjectMapper objectMapper = new ObjectMapper();
 
     static {
         // 对象的所有字段全部列入，还是其他的选项，可以忽略null等
